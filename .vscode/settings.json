@@ -4,6 +4,6 @@
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "eslint.validate": ["javascript", "typescript"],
-  "prettier.singleQuote": true
+  "eslint.validate": ["astro", "javascript", "typescript"],
+  "prettier.documentSelectors": ["**/*.astro"]
 }
