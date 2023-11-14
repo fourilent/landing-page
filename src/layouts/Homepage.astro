@@ -1,0 +1,13 @@
+---
+import HTML from "./HTML.astro";
+import HeroBox from "../components/HeroBox.astro";
+import BgParticles from "../components/BgParticles.astro";
+const { title } = Astro.props;
+---
+
+<HTML title={title}>
+  <HeroBox>
+    <slot />
+  </HeroBox>
+  <div class="hidden"><BgParticles /></div>
+</HTML>

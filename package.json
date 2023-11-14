@@ -8,21 +8,24 @@
     "build": "pnpm format && pnpm lint && astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write . --plugin=prettier-plugin-astro",
-    "lint": "eslint --ext .astro,.js,.ts ."
+    "format": "prettier --write ./src --plugin=prettier-plugin-astro",
+    "lint": "eslint --ext .astro,.js,.ts ./src"
   },
   "dependencies": {
     "@astrojs/check": "^0.3.1",
-    "@astrojs/tailwind": "^5.0.2",
-    "astro": "^3.5.0",
-    "tailwindcss": "^3.0.24",
+    "astro": "^3.5.3",
     "typescript": "^5.2.2"
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "^6.10.0",
+    "@astrojs/tailwind": "^5.0.2",
+    "@typescript-eslint/parser": "^6.11.0",
+    "astro-particles": "^2.10.0",
     "eslint": "^8.53.0",
     "eslint-plugin-astro": "^0.29.1",
-    "prettier": "^3.0.3",
-    "prettier-plugin-astro": "^0.12.1"
+    "prettier": "^3.1.0",
+    "prettier-plugin-astro": "^0.12.2",
+    "tailwindcss": "^3.3.5",
+    "tsparticles": "^2.12.0",
+    "tsparticles-engine": "^2.12.0"
   }
 }

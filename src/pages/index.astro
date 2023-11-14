@@ -1,1 +1,68 @@
-<h1>Hello, World!</h1>
+---
+import Homepage from "../layouts/Homepage.astro";
+import FlexColumn from "../components/FlexColumn.astro";
+import type { Column } from "../components/FlexColumn.astro";
+
+const columns: Column[] = [
+  {
+    title: "Socials",
+    links: [
+      {
+        name: "GitHub",
+        url: "https://github.com/fourilent/",
+      },
+      {
+        name: "YouTube",
+        url: "https://www.youtube.com/@fourilent/",
+      },
+      {
+        name: "X/Twitter",
+        url: "https://twitter.com/fourilent/",
+      },
+    ],
+  },
+  {
+    title: "Services",
+    links: [
+      {
+        name: "Upload",
+        url: "https://a.frlt.one",
+      },
+      {
+        name: "Paste",
+        url: "https://b.frlt.one",
+      },
+      {
+        name: "Shorten",
+        url: "https://c.frlt.one",
+      },
+    ],
+  },
+  {
+    title: "Contact",
+    links: [
+      {
+        name: "Email",
+        url: "mailto:fourilent@frlt.one",
+      },
+      {
+        name: "Discord",
+        url: "https://discord.com/users/208539097113821184",
+      },
+      {
+        name: "XMPP",
+        url: "xmpp:fourilent@disroot.org",
+      },
+    ],
+  },
+];
+---
+
+<Homepage title="FRLT.ONE">
+  <h1 class="text-3xl">FRLT.ONE</h1>
+  <h2 class="text-xl">fourilent's landing page</h2>
+  <hr class="border-black my-2" />
+  <div class="flex flex-col md:flex-row min-w-max text-center">
+    {columns.map((column) => <FlexColumn column={column} />)}
+  </div>
+</Homepage>
