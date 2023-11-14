@@ -1,0 +1,27 @@
+---
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{title}</title>
+
+    <meta name="description" content="fourilent's landing page" />
+    <meta property="og:title" content="FRLT.ONE" />
+    <meta property="og:description" content="fourilent's landing page" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://frlt.one/" />
+    <meta property="og:image" content="https://frlt.one/icon-512x512.png" />
+    <meta name="theme-color" content="#000000" />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/icon-192x192.png" />
+    <link rel="manifest" href="site.webmanifest" />
+  </head>
+  <body class="bg-black text-white">
+    <slot />
+  </body>
+</html>
