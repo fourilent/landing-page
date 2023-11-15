@@ -1,9 +1,13 @@
 ---
 import Homepage from "../layouts/Homepage.astro";
 import FlexColumn from "../components/FlexColumn.astro";
+import FlexRow from "../components/FlexRow.astro";
 import type { Column } from "../components/FlexColumn.astro";
 
-const columns: Column[] = [
+const title: string = "FRLT.ONE";
+const description: string = "fourilent's landing page";
+
+const body: Column[] = [
   {
     title: "Socials",
     links: [
@@ -26,15 +30,19 @@ const columns: Column[] = [
     links: [
       {
         name: "Upload",
-        url: "https://a.frlt.one",
+        url: "https://a.frlt.one/",
       },
       {
         name: "Paste",
-        url: "https://b.frlt.one",
+        url: "https://b.frlt.one/",
       },
       {
         name: "Shorten",
-        url: "https://c.frlt.one",
+        url: "https://c.frlt.one/",
+      },
+      {
+        name: "Search",
+        url: "https://s.frlt.one/",
       },
     ],
   },
@@ -56,13 +64,26 @@ const columns: Column[] = [
     ],
   },
 ];
+
+const footer: Column = {
+  title: "Footer",
+  links: [
+    {
+      name: "Status",
+      url: "https://status.frlt.one/",
+    },
+  ],
+};
 ---
 
 <Homepage title="FRLT.ONE">
-  <h1 class="text-3xl">FRLT.ONE</h1>
-  <h2 class="text-xl">fourilent's landing page</h2>
+  <h1 class="text-3xl font-bold">{title}</h1>
+  <h2 class="text-xl">{description}</h2>
   <hr class="border-black my-2" />
-  <div class="flex flex-col md:flex-row min-w-max text-center">
-    {columns.map((column) => <FlexColumn column={column} />)}
+  <div class="flex flex-col md:flex-row min-w-max text-center md:my-4">
+    {body.map((column) => <FlexColumn column={column} />)}
+  </div>
+  <div class="flex min-w-max">
+    <FlexRow column={footer} />
   </div>
 </Homepage>

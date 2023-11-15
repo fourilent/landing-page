@@ -1,0 +1,17 @@
+---
+import type { Column, Link } from "../components/FlexColumn.astro";
+
+const column: Column = Astro.props.column;
+---
+
+{
+  column.links.map((link: Link) => (
+    <div class="mr-2">
+      <p>
+        <a href={link.url} class="underline transition hover:text-blue-500 ">
+          {link.name}
+        </a>
+      </p>
+    </div>
+  ))
+}
