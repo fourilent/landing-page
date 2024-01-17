@@ -93,14 +93,13 @@ export const faq: QNA[] = [
   },
   {
     question: "What is this site?",
-    answer: `A landing page for my various projects, socials, and 
-    other things. It's also a place for me to test out new technologies 
-    and ideas.`,
+    answer: `A landing page for my various socials, public services 
+    and other things. I do all this because I enjoy it.`,
   },
   {
     question: "This website looks cool, how did you make it?",
     answer: `Thanks! It's built with <a href="https://astro.build/">
-    Astro</a> and <a href="https://svelte.dev/">Svelte</a> and it's 
+    Astro</a> and <a href="https://svelte.dev/">Svelte</a>. It's 
     actually quite simple. You can find the source code 
     <a href="https://github.com/fourilent/landing-page">here</a>.`,
   },

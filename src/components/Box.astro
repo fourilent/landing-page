@@ -1,5 +1,12 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
 <div class="my-10 flex justify-center">
-  <div class="max-w-xl rounded border bg-white bg-opacity-10 p-5">
+  <div class="max-w-xl rounded border bg-white bg-opacity-10 p-5 relative">
+    <a href="/" class="absolute top-0 right-0 m-2 text-lg font-bold">
+      <Icon name="mdi:home" class="h-8 w-8" /></a
+    >
     <slot />
   </div>
 </div>
