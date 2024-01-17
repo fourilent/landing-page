@@ -10,11 +10,10 @@ const column: Column = Astro.props.column;
       <p>
         <a
           href={link.url}
-          class="text-indigo-600 underline transition hover:text-blue-500 "
+          class="text-indigo-400 transition hover:text-blue-500"
+          title={link.name}
         >
-          {link.icon && (
-            <Icon name={link.icon} class="ml-1 inline-block h-6 w-6" />
-          )}
+          {link.icon && <Icon name={link.icon} class="inline-block h-6 w-6" />}
         </a>
       </p>
     </div>

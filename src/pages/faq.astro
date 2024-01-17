@@ -1,0 +1,25 @@
+---
+import BgParticles from "../components/BgParticles.svelte";
+import Box from "../components/Box.astro";
+import QNA from "../components/QNA.astro";
+import Root from "../layouts/Root.astro";
+import { faq } from "../components/Data";
+---
+
+<Root title="frlt.one - FAQ">
+  <Box>
+    <h1 class="text-center text-3xl">
+      <strike>un</strike>Frequently Asked Questions
+    </h1>
+    <div>
+      {
+        faq.map((qna) => (
+          <QNA question={qna.question}>
+            <Fragment set:html={qna.answer} />
+          </QNA>
+        ))
+      }
+    </div>
+  </Box>
+  <BgParticles client:only="svelte" />
+</Root>
