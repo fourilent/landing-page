@@ -20,6 +20,7 @@
     "@tsparticles/svelte": "^3.0.0",
     "astro": "^4.1.2",
     "astro-icon": "^1.0.2",
+    "node-html-parser": "^6.1.12",
     "svelte": "^4.2.8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
