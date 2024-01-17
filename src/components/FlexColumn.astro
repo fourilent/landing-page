@@ -1,28 +1,23 @@
 ---
-export interface Column {
-  title: string;
-  links: Link[];
-}
-
-export interface Link {
-  name: string;
-  url: string;
-}
-
+import type { Column, Link } from "./types";
+import { Icon } from "astro-icon/components";
 const column: Column = Astro.props.column;
 ---
 
-<div class="flex-1 mt-4 lg:mt-0">
-  <h3 class="text-2xl">{column.title}</h3>
+<div class="mt-4 flex-1 lg:mt-0">
+  <h3 class="text-2xl font-bold italic">{column.title}</h3>
   <ul>
     {
       column.links.map((link: Link) => (
         <li class="mt-2 list-none text-lg">
           <a
             href={link.url}
-            class="no-underline transition hover:text-blue-500 "
+            class="flex items-center justify-center no-underline transition hover:text-blue-500"
           >
             {link.name}
+            {link.icon && (
+              <Icon name={link.icon} class="ml-1 inline-block h-6 w-6" />
+            )}
           </a>
         </li>
       ))

@@ -1,3 +1,3 @@
 # landing-page
 
-Redesign of landing page @ https://frlt.one/
+Redesign of landing page @ [frlt.one](https://frlt.one/)

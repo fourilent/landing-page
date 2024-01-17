@@ -1,89 +1,23 @@
 ---
-import Homepage from "../layouts/Homepage.astro";
+import Root from "../layouts/Root.astro";
+import HeroBox from "../components/HeroBox.astro";
 import FlexColumn from "../components/FlexColumn.astro";
 import FlexRow from "../components/FlexRow.astro";
-import type { Column } from "../components/FlexColumn.astro";
-
-const title: string = "FRLT.ONE";
-const description: string = "fourilent's landing page";
-
-const body: Column[] = [
-  {
-    title: "Socials",
-    links: [
-      {
-        name: "GitHub",
-        url: "https://github.com/fourilent/",
-      },
-      {
-        name: "YouTube",
-        url: "https://www.youtube.com/@fourilent/",
-      },
-      {
-        name: "X/Twitter",
-        url: "https://twitter.com/fourilent/",
-      },
-    ],
-  },
-  {
-    title: "Services",
-    links: [
-      {
-        name: "Upload",
-        url: "https://a.frlt.one/",
-      },
-      {
-        name: "Paste",
-        url: "https://b.frlt.one/",
-      },
-      {
-        name: "Shorten",
-        url: "https://c.frlt.one/",
-      },
-      {
-        name: "Search",
-        url: "https://s.frlt.one/",
-      },
-    ],
-  },
-  {
-    title: "Contact",
-    links: [
-      {
-        name: "Email",
-        url: "mailto:fourilent@frlt.one",
-      },
-      {
-        name: "Discord",
-        url: "https://discord.com/users/208539097113821184",
-      },
-      {
-        name: "XMPP",
-        url: "xmpp:fourilent@disroot.org",
-      },
-    ],
-  },
-];
-
-const footer: Column = {
-  title: "Footer",
-  links: [
-    {
-      name: "Status",
-      url: "https://status.frlt.one/",
-    },
-  ],
-};
+import BgParticles from "../components/BgParticles.svelte";
+import { title, description, body, footer } from "../components/Data";
 ---
 
-<Homepage title="FRLT.ONE">
-  <h1 class="text-3xl font-bold">{title}</h1>
-  <h2 class="text-xl">{description}</h2>
-  <hr class="border-black my-2" />
-  <div class="flex flex-col md:flex-row min-w-max text-center md:my-4">
-    {body.map((column) => <FlexColumn column={column} />)}
-  </div>
-  <div class="flex min-w-max">
-    <FlexRow column={footer} />
-  </div>
-</Homepage>
+<Root title="frlt.one">
+  <HeroBox>
+    <h1 class="text-3xl font-bold">{title}</h1>
+    <h2 class="text-xl text-neutral-700">{description}</h2>
+    <hr class="my-2 border-black" />
+    <div class="flex min-w-max flex-col text-center md:my-4 md:flex-row">
+      {body.map((column) => <FlexColumn column={column} />)}
+    </div>
+    <div class="flex min-w-max">
+      <FlexRow column={footer} />
+    </div>
+  </HeroBox>
+  <BgParticles client:only="svelte" />
+</Root>
