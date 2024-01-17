@@ -1,4 +1,4 @@
-import type { Column } from "./types";
+import type { Column, QNA } from "./types";
 
 export const title: string = "frlt.one";
 export const description: string = "fourilent's landing page";
@@ -84,3 +84,37 @@ export const footer: Column = {
     },
   ],
 };
+export const faq: QNA[] = [
+  {
+    question: "Who am I?",
+    answer: `A random individual on the Internet obsessed with all 
+    things technology. Specifically DevOps, Cloud Native Computing, 
+    and Cybersecurity.`,
+  },
+  {
+    question: "What is this site?",
+    answer: `A landing page for my various projects, socials, and 
+    other things. It's also a place for me to test out new technologies 
+    and ideas.`,
+  },
+  {
+    question: "This website looks cool, how did you make it?",
+    answer: `Thanks! It's built with <a href="https://astro.build/">
+    Astro</a> and <a href="https://svelte.dev/">Svelte</a> and it's 
+    actually quite simple. You can find the source code 
+    <a href="https://github.com/fourilent/landing-page">here</a>.`,
+  },
+  {
+    question: "Can you add a new service?",
+    answer: `Most of the public services I provide are <i>ephemeral</i>
+    , meaning I don't plan to store their data permanently. I do not 
+    have the infrastructure to provide 100% uptime forever, but if you 
+    have a service that fits this criteria, feel free to contact me!`,
+  },
+  {
+    question: "How are you hosting all your stuff?",
+    answer: `Everything runs on a single server in my home, traffic is 
+    proxied by a VPS<sup>mostly</sup>. I use Docker to containerize 
+    all my services.`,
+  },
+];

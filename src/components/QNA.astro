@@ -1,0 +1,18 @@
+---
+const question: string = Astro.props.question;
+---
+
+<style is:global>
+  a {
+    @apply underline transition hover:text-indigo-400;
+  }
+</style>
+
+<div class="mt-6">
+  <h2
+    class="flex items-center gap-2 text-lg text-indigo-400 after:h-[1px] after:flex-1 after:bg-indigo-400"
+  >
+    {question}
+  </h2>
+  <p><slot /></p>
+</div>
