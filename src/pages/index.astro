@@ -1,8 +1,8 @@
 ---
 import Root from "../layouts/Root.astro";
 import HeroBox from "../components/HeroBox.astro";
-import FlexColumn from "../components/FlexColumn.astro";
-import FlexRow from "../components/FlexRow.astro";
+import Column from "../components/Column.astro";
+import Row from "../components/Row.astro";
 import BgParticles from "../components/BgParticles.svelte";
 import { title, description, body, footer } from "../components/Data";
 ---
@@ -11,13 +11,13 @@ import { title, description, body, footer } from "../components/Data";
   <HeroBox>
     <h1 class="text-3xl font-bold">{title}</h1>
     <h2 class="text-xl text-neutral-700">{description}</h2>
-    <hr class="my-2 border-black" />
-    <div class="flex min-w-max flex-col text-center md:my-4 md:flex-row">
-      {body.map((column) => <FlexColumn column={column} />)}
+    <hr class="my-4 hidden border-black lg:block" />
+    <div class="mb-4 flex min-w-max flex-col text-center md:flex-row">
+      {body.map((column) => <Column column={column} />)}
     </div>
-    <div class="flex min-w-max">
-      <FlexRow column={footer} />
-    </div>
+    <footer>
+      <Row column={footer} />
+    </footer>
   </HeroBox>
-  <BgParticles client:only="svelte" />
+  <BgParticles client:load />
 </Root>
