@@ -4,10 +4,10 @@ import { Icon } from "astro-icon/components";
 const column: Column = Astro.props.column;
 ---
 
-{
-  column.links.map((link: Link) => (
-    <div class="mr-2">
-      <p>
+<ul class="flex gap-4">
+  {
+    column.links.map((link: Link) => (
+      <li>
         <a
           href={link.url}
           class="text-indigo-400 transition hover:text-blue-500"
@@ -15,7 +15,7 @@ const column: Column = Astro.props.column;
         >
           {link.icon && <Icon name={link.icon} class="inline-block h-6 w-6" />}
         </a>
-      </p>
-    </div>
-  ))
-}
+      </li>
+    ))
+  }
+</ul>

@@ -1,6 +1,7 @@
 <script lang="ts">
   import Particles, { particlesInit } from "@tsparticles/svelte";
   import { loadSlim } from "@tsparticles/slim";
+  import { onMount } from "svelte";
 
   const particlesConfig = {
     fullScreen: {
@@ -33,6 +34,17 @@
   void particlesInit(async (engine) => {
     await loadSlim(engine);
   });
+
+  let ParticlesComponent: typeof Particles;
+
+  onMount(async () => {
+    const module = await import("@tsparticles/svelte");
+    ParticlesComponent = module.default;
+  });
 </script>
 
-<Particles id="tsparticles" options={particlesConfig} />
+<svelte:component
+  this={ParticlesComponent}
+  id="tsparticles"
+  options={particlesConfig}
+/>
